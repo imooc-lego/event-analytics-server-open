@@ -1,0 +1,12 @@
+version: '3'
+services:
+    event-analytics-server:
+        build:
+            context: .
+            dockerfile: Dockerfile
+        image: event-analytics-server # 依赖于当前 Dockerfile 创建镜像
+        container_name: event-analytics-server
+        ports:
+            - 8080:3002 # 宿主机通过 8080 访问
+        volumes:
+            - /home/work/nginx_logs/event_analytics:/app/nginx_logs/event_analytics # 见 nginx_conf/prd-dev/event.conf 和 Dockerfile

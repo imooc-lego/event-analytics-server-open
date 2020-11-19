@@ -1,0 +1,9 @@
+.git
+node_modules
+logs
+.docker-volumes
+wfp_test
+wiki
+__test__
+nginx_conf
+nginx_files
