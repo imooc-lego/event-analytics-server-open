@@ -5,14 +5,14 @@
 
 const path = require('path')
 const fse = require('fs-extra')
-const { accessLogPath } = require('../../config/index')
 const { genYesterdayLogFileName, formatNow } = require('../utils/util')
 const { DIST_FOLDER_NAME } = require('../config/const')
 
 /**
- * @description 拆分日志文件
+ * 拆分日志文件
+ * @param {string} accessLogPath access log 日志目录
  */
-function splitLogFile() {
+function splitLogFile(accessLogPath) {
     console.log('----------- 拆分日志文件 开始 -----------')
     console.log('当前的时间', formatNow())
 

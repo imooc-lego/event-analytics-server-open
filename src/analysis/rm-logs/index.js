@@ -5,11 +5,14 @@
 
 const path = require('path')
 const fse = require('fs-extra')
-const { accessLogPath } = require('../../config/index')
 const { formatNow } = require('../utils/util')
 const { DIST_FOLDER_NAME } = require('../config/const')
 
-function rmLogs() {
+/**
+ * 清除历史日志
+ * @param {string} accessLogPath access log 目录
+ */
+function rmLogs(accessLogPath) {
     console.log('----------- 删除过期日志文件 开始 -----------')
     console.log('当前的时间', formatNow())
 
